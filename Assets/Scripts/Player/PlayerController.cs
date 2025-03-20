@@ -23,12 +23,12 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         GatherInput();
+        Move();
         Jump();
         HandleSpriteFlip();
     }
 
     private void FixedUpdate() {
-        Move();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             _isGrounded = true;
+            Debug.Log("Ch?m ??t! _isGrounded = " + _isGrounded);
         }
     }
 
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             _isGrounded = false;
+            Debug.Log("R?i kh?i ??t! _isGrounded = " + _isGrounded);
         }
     }
 
@@ -65,8 +67,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded) {
-            //Nhap thap o day
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && _isGrounded) {
             _rigidBody.AddForce(Vector2.up * _jumpStrength, ForceMode2D.Impulse);
         }
     }
