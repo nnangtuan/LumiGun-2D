@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 938985427589831289, guid: 0e0cf39959dc4e6419d9d5b01eeb69ef, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393087752330083124, guid: 0e0cf39959dc4e6419d9d5b01eeb69ef, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 39189720eca0b4740b326bc7082629cf, type: 2}
     - target: {fileID: 5936398426171651494, guid: 0e0cf39959dc4e6419d9d5b01eeb69ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7177743504575743441, guid: 0e0cf39959dc4e6419d9d5b01eeb69ef, type: 3}
       propertyPath: m_Name
-      value: Base Death VFX
+      value: Enemy Death VFX
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
