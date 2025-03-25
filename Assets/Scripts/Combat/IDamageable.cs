@@ -1,5 +1,6 @@
+using UnityEngine;
 public interface IDamageable:IHitable
 {
-    void TakeDamage(int damageAmount, float knockBackThust);
+    void TakeDamage(Vector2 damageSourceDir,int damageAmount, float knockBackThust);
 
 }

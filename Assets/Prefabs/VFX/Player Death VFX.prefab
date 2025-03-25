@@ -8,13 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 938985427589831289, guid: 0e0cf39959dc4e6419d9d5b01eeb69ef, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 938985427589831289, guid: 0e0cf39959dc4e6419d9d5b01eeb69ef, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.20392157
+      objectReference: {fileID: 0}
     - target: {fileID: 5936398426171651494, guid: 0e0cf39959dc4e6419d9d5b01eeb69ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 8.616289
       objectReference: {fileID: 0}
     - target: {fileID: 5936398426171651494, guid: 0e0cf39959dc4e6419d9d5b01eeb69ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -6.8364496
       objectReference: {fileID: 0}
     - target: {fileID: 5936398426171651494, guid: 0e0cf39959dc4e6419d9d5b01eeb69ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -50,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7177743504575743441, guid: 0e0cf39959dc4e6419d9d5b01eeb69ef, type: 3}
       propertyPath: m_Name
-      value: Base Death VFX
+      value: Player Death VFX
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

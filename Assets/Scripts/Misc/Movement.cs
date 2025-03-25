@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public bool CanMove => _canMove;
+
     [SerializeField] private float _moveSpeed =10;
     private float _moveX;
     private bool _canMove = true;

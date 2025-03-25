@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
         iHitable?.TakeHit();
 
         IDamageable iDamageable = other.gameObject.GetComponent<IDamageable>();
-        iDamageable?.TakeDamage(_damageAmount, _knockBackThrust);
+        iDamageable?.TakeDamage(_fireDirection,_damageAmount, _knockBackThrust);
 
         /*Health health = other.gameObject.GetComponent<Health>();
         health?.TakeDamage(_damageAmount);

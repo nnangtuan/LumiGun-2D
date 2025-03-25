@@ -23,3 +23,11 @@ MonoBehaviour:
   Splat:
   - {fileID: 11400000, guid: f8f217181fe13174fb5a9fa4b9587512, type: 2}
   - {fileID: 11400000, guid: e9a64d036116c5848bfbafd109d69ef2, type: 2}
+  Jetpack:
+  - {fileID: 11400000, guid: a10d8b79557bb8247a5fc31f81737667, type: 2}
+  GrenadeShoot:
+  - {fileID: 11400000, guid: 698f0ca8a50e4b64781549ab25a0d58c, type: 2}
+  GrenadeExplode:
+  - {fileID: 11400000, guid: a00504581412e414899a220bd4fad31a, type: 2}
+  GrenadeBeep:
+  - {fileID: 11400000, guid: 2f5df9392f598c64581b5fb945d8a95e, type: 2}

@@ -1,36 +1,50 @@
 using System.Collections;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamageable
+public class Enemy : MonoBehaviour
 {
 
     [SerializeField] private float _jumpForce = 7f;
     [SerializeField] private float _jumpInterval = 4f;
     [SerializeField] private float _changeDirectionInterval = 3f;
-
+    [SerializeField] private int _damageAmount = 1;
+    [SerializeField] private float _knockBackThrust = 25f;
 
     private Rigidbody2D _rigidBody;
     private Movement _movement;
     private ColorChanger _colorChanger;
-    private Knockback _knockback;
-    private Flash _flash;
-    private Health _health;
+    
 
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         _movement = GetComponent<Movement>();
         _colorChanger = GetComponent<ColorChanger>();
-        _knockback = GetComponent<Knockback>();
-        _flash = GetComponent<Flash>();
-        _health = GetComponent<Health>();
+        
     }
 
     private void Start() {
         StartCoroutine(ChangeDirectionRoutine());
         StartCoroutine(RandomJumpRoutine());
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        if (!player) return;
 
+        Movement playerMovement = player.GetComponent<Movement>();
+
+        if (playerMovement.CanMove) { 
+            IHitable iHitable = collision.gameObject.GetComponent<IHitable>();
+            iHitable?.TakeHit();
+
+            IDamageable iDamageable = collision.gameObject.GetComponent<IDamageable>();
+            iDamageable?.TakeDamage(transform.position,_damageAmount, _knockBackThrust);
+
+            AudioManager.instance.Enemy_OnPlayerHit();
+        }
+
+    }
     public void Init(Color color)
     {
         _colorChanger.SetDefaultColor(color);
@@ -57,16 +71,5 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    public void TakeDamage(int damageAmount, float knockBackThust)
-    {
-        _health.TakeDamage(damageAmount);
-        _knockback.GetKnockedBack(PlayerController.Instance.transform.position, knockBackThust);
-
-    }
-
-    public void TakeHit()
-    {
-        _flash.StartFlash();
-        
-    }
+    
 }
